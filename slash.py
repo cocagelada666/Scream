@@ -19,6 +19,7 @@ from api.pastebin import search as pastesearch
 from api.github import search as githubsearch
 from api.extract import extract as extract 
 from api.leakcheck import check as leakcheck 
+from api.reddit import search as redditsearch
 
 
 
@@ -43,6 +44,8 @@ def _username(username):
     try:threading.Thread(target=pastesearch,args=(username,)).start()
     except:pass
     try:threading.Thread(target=githubsearch,args=(username,)).start()
+    except:pass
+    try:threading.Thread(target=redditsearch, args=(username,)).start()
     except:pass
 
 def _mail(mail_adress):
@@ -69,8 +72,8 @@ def _start(value : str):
 
 if __name__ == "__main__":
     clear()
-    print(banner.slash)
+    print(banner.Scream)
     #_start()
     typer.run(_start)
 
-# By Ahmadov...
+# By Coca...
